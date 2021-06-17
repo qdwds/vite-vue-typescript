@@ -1,7 +1,7 @@
 /*
  * @Description: windi.css 
  * @Date: 2021-06-17 10:59:46
- * @LastEditTime: 2021-06-17 14:11:14
+ * @LastEditTime: 2021-06-17 14:26:22
  */
 import { defineConfig } from 'windicss/helpers'
 // import formsPlugin from 'windicss/plugin/forms'
@@ -10,8 +10,7 @@ export default defineConfig({
   darkMode: 'class',
   preflight: false,  // 样式重置
   safelist: 'p-3 p-4 p-5',
-  theme: {
-    //  重新配置
+  theme: {    //  重新配置
     extend: {
       screens: {
         'sm': '640px',

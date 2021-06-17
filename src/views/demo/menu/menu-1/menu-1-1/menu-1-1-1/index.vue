@@ -1,0 +1,29 @@
+<!--
+ * @Description: 
+ * @Author: 前端伪大叔
+ * @Date: 2021-06-09 16:00:23
+ * @LastEditTime: 2021-06-09 16:00:30
+ * @yuque: http://www.yuque.com/qdwds
+-->
+
+<template>
+    <div>
+ccc1
+    </div>
+</template>
+
+<script lang="ts">
+import { defineComponent } from 'vue'
+
+export default defineComponent({
+    setup () {
+        
+
+        return {}
+    }
+})
+</script>
+
+<style scoped>
+
+</style>

@@ -1,10 +1,10 @@
 /*
  * @Description: 
  * @Date: 2021-06-16 17:32:16
- * @LastEditTime: 2021-06-16 17:47:29
+ * @LastEditTime: 2021-06-17 17:44:03
  */
 import { AppRouteModule, AppRouteRecordRaw } from "../types";
-const LAYOUT = () => import("@/layout/index.vue");
+export const LAYOUT = () => import("@/layout/default/index.vue");
 
 
 const NOT_FOUND_ROUTE: AppRouteModule = {
@@ -20,8 +20,8 @@ const NOT_FOUND_ROUTE: AppRouteModule = {
     ]
 }
 const root: AppRouteRecordRaw = {
-    name: "Root",
     path: "/",
+    name: "Root",
     redirect:"/login",
     component: LAYOUT
 }

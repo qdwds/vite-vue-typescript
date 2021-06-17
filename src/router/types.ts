@@ -1,7 +1,7 @@
 /*
  * @Description: 路由类型
  * @Date: 2021-06-16 16:19:47
- * @LastEditTime: 2021-06-16 17:35:44
+ * @LastEditTime: 2021-06-17 17:45:53
  */
 import { defineComponent } from "vue";
 import { RouteRecordRaw } from "vue-router";
@@ -20,10 +20,13 @@ export interface RouterMeta {
 
 // @ts-ignore
 export interface AppRouteRecordRaw extends Omit< RouteRecordRaw ,"meta">{
-    name:string;
     path:string;
+    name:string;
     component:Component | string;
     children?:AppRouteRecordRaw[],
+    meta?:{
+        title:string
+    }
 }
 
 export type AppRouteModule = AppRouteRecordRaw;
