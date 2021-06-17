@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: 前端伪大叔
  * @Date: 2021-06-09 12:05:59
- * @LastEditTime: 2021-06-17 17:45:23
+ * @LastEditTime: 2021-06-17 22:04:09
  * @yuque: http://www.yuque.com/qdwds
  */
 
@@ -18,9 +18,9 @@ const menu: AppRouteModule = {
     },
     children: [
         {
-            path: "/menu/menu-1",
+            path: "menu-1",
             name: "Menu-1",
-            component: ()=>import("@/layout/Transition/index.vue"),
+            component: () => import("@/components/RouterTransition/index.vue"),
             meta: {
                 title: "menu-1"
             },
@@ -28,7 +28,7 @@ const menu: AppRouteModule = {
                 {
                     path: "menu-1-1",
                     name: "Menu-1-1",
-                    component: ()=>import("@/layout/Transition/index.vue"),
+                    component: () => import("@/components/RouterTransition/index.vue"),
                     meta: {
                         title: "menu-1-1"
                     },
@@ -40,30 +40,11 @@ const menu: AppRouteModule = {
                             meta: {
                                 title: "menu-1-1-1"
                             },
-                        },
-                        // {
-                            //     path: "menu-1-1-2",
-                            //     name: "Menu-1-1-2",
-                        //     component: ()=>import("@/layout/Transition/index.vue"),
-                        //     meta: {
-                        //         title: "menu-1-1-2"
-                        //     },
-                        //     children: [
-                        //         {
-                            //             path: "menu-1-1-2-1",
-                            //             name: "Menu-1-1-2-1",
-                        //             component: () => import("@/views/demo/menu/menu-1/menu-1-1/menu-1-1-2/menu-1-1-2-1/index.vue"),
-                        //             meta: {
-                        //                 title: "menu-1-1-2-1"
-                        //             }
-                        //         },
-
-                        //     ]
-                        // },
+                        }
                     ]
                 },
                 {
-                    path: "/menu/menu-1/menu-1-2",
+                    path: "menu-1-2",
                     name: "Menu-1-2",
                     component: () => import("@/views/demo/menu/menu-1/menu-1-2/index.vue"),
                     meta: {

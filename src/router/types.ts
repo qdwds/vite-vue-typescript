@@ -1,7 +1,7 @@
 /*
  * @Description: 路由类型
  * @Date: 2021-06-16 16:19:47
- * @LastEditTime: 2021-06-17 17:45:53
+ * @LastEditTime: 2021-06-17 21:21:35
  */
 import { defineComponent } from "vue";
 import { RouteRecordRaw } from "vue-router";
