@@ -1,11 +1,11 @@
 <!--
  * @Description: header
  * @Date: 2021-06-17 15:35:50
- * @LastEditTime: 2021-06-17 15:53:25
+ * @LastEditTime: 2021-06-18 10:22:20
 -->
 
 <template>
-    <LayoutHeader style="background: #fff; padding: 0">
+    <LayoutHeader style="background: #fff; padding: 0" class="h-12">
         header
     </LayoutHeader>
 </template>

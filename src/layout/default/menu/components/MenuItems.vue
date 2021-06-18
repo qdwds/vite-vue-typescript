@@ -1,7 +1,7 @@
 <!--
  * @Description: 导航菜单 递归组件
  * @Date: 2021-06-17 21:35:15
- * @LastEditTime: 2021-06-17 22:13:08
+ * @LastEditTime: 2021-06-18 10:43:40
 -->
 
 <template>
@@ -50,11 +50,9 @@ export default defineComponent({
         MenuItem:Menu.Item,
         SubMenu:Menu.SubMenu
     },
-    setup ({router}) {
-        console.log(router);
+    setup () {
         const route = useRouter();
         const handleRouteJump = (name:string) =>{
-            console.log(name);
             route.push({
                 name
             })
