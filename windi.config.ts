@@ -1,7 +1,7 @@
 /*
  * @Description: windi.css 
  * @Date: 2021-06-17 10:59:46
- * @LastEditTime: 2021-06-17 14:26:22
+ * @LastEditTime: 2021-06-21 17:06:13
  */
 import { defineConfig } from 'windicss/helpers'
 // import formsPlugin from 'windicss/plugin/forms'

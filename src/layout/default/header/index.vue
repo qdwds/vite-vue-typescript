@@ -1,30 +1,53 @@
 <!--
- * @Description: header
- * @Date: 2021-06-17 15:35:50
- * @LastEditTime: 2021-06-18 10:22:20
+ * @Description: 
+ * @Date: 2021-06-21 15:31:16
+ * @LastEditTime: 2021-06-21 16:38:56
 -->
-
 <template>
-    <LayoutHeader style="background: #fff; padding: 0" class="h-12">
-        header
+    <LayoutHeader
+        class="h-10 flex justify-between items-center pl-2 pr-2 bg-white "
+    >
+        <div>
+            mbs
+        </div>
+
+        <div class="flex">
+            <Yuque></Yuque>
+            <Github></Github>
+            <FullScreen></FullScreen>
+            <Setting></Setting>
+            <LockScreen></LockScreen>
+             <UserInfo></UserInfo> 
+            <!-- 
+            <UserInfo></UserInfo> -->
+        </div>
     </LayoutHeader>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent } from "vue";
 import { Layout } from "ant-design-vue";
+import Setting from "./setting/index.vue";
+// import Breadcrumb from "./breadcrumb/index.vue";
+import FullScreen from "./fullScreen/index.vue";
+import UserInfo from "./userInfo/index.vue";
+import Github from "./github/index.vue";
+import LockScreen from "./lockScreen/index.vue";
+import Yuque from "./yuque/index.vue";
 export default defineComponent({
-    components:{
-        LayoutHeader:Layout.Header
+    name: "Header",
+    components: {
+        LayoutHeader: Layout.Header,
+        Setting,
+        // Breadcrumb,
+        FullScreen,
+        UserInfo,
+        Github,
+        LockScreen,
+        Yuque,
     },
-    setup () {
-        
-
-        return {}
-    }
-})
+    setup() {
+        return {};
+    },
+});
 </script>
-
-<style scoped>
-
-</style>
