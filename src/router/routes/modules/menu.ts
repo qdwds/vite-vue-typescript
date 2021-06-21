@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: 前端伪大叔
  * @Date: 2021-06-09 12:05:59
- * @LastEditTime: 2021-06-17 22:04:09
+ * @LastEditTime: 2021-06-21 14:56:24
  * @yuque: http://www.yuque.com/qdwds
  */
 
@@ -14,7 +14,8 @@ const menu: AppRouteModule = {
     redirect: "/menu/menu-1",
     component: LAYOUT,
     meta: {
-        title: "递归组件"
+        title: "递归组件",
+        children:true
     },
     children: [
         {
@@ -22,7 +23,8 @@ const menu: AppRouteModule = {
             name: "Menu-1",
             component: () => import("@/components/RouterTransition/index.vue"),
             meta: {
-                title: "menu-1"
+                title: "menu-1",
+                children:true
             },
             children: [
                 {
@@ -30,7 +32,8 @@ const menu: AppRouteModule = {
                     name: "Menu-1-1",
                     component: () => import("@/components/RouterTransition/index.vue"),
                     meta: {
-                        title: "menu-1-1"
+                        title: "menu-1-1",
+                        children:true
                     },
                     children: [
                         {

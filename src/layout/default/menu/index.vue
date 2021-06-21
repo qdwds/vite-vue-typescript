@@ -1,19 +1,17 @@
 <!--
  * @Description: menu   
  * @Date: 2021-06-17 15:36:22
- * @LastEditTime: 2021-06-18 12:10:58
+ * @LastEditTime: 2021-06-21 15:24:33
 -->
 <template>
     <div>
-        <div>submenu {{ openKeys }}</div>
-        <div>menuitem {{ selectedKeys }}</div>
         <Menu
             theme="dark"
             mode="inline"
             v-model:openKeys="openKeys"
             v-model:selectedKeys="selectedKeys"
             @openChange="handleOpenSubMenu"
-            @click="c"
+            @select="handleMenuSelect"
         >
             <template v-for="router of getMenuRoutes" :key="router.name">
                 <MenuItems :router="router"></MenuItems>
@@ -24,50 +22,53 @@
 
 <script lang="ts">
 import { defineComponent, reactive, toRefs } from "vue";
-import { useHandleRoutes } from "@/hooks/menus/useRouter";
-import { useRoute, useRouter } from "vue-router";
+import { useHandleRoutes } from "@/hooks/menus/useRouterfFeat";
+import { useRouter } from "vue-router";
 import MenuItems from "./components/MenuItems.vue";
 import { Menu } from "ant-design-vue";
-
+import { useMenuStore } from "@/hooks/menus/useRouterMenu";
 export default defineComponent({
     components: {
         MenuItems,
         Menu,
     },
     setup() {
+        //  获取路由相关内容
         const router = useRouter();
-        const { fileterRoutes, menuRoutes } = useHandleRoutes();
-        const getFilterRoutes = fileterRoutes(router.options.routes);
+        const routes = router.options.routes;
+        const { fileterRoutes, menuRoutes, getAllMenuName } = useHandleRoutes();
+        const getFilterRoutes = fileterRoutes(routes);
         const getMenuRoutes = menuRoutes(getFilterRoutes);
+        // const routesName = getAllMenuName(getFilterRoutes);
+        // console.log(routesName);
 
-        const route = useRoute();
-        console.log(route);
-        
+        const {
+            getOpenKeyStore,
+            getSelectedKeysStore,
+            setOpenKeyStore,
+            setSelectedKeysStore,
+        } = useMenuStore();
+
         const state = reactive({
-            openKeys: [ "Menu", "Menu-1","Menu-1-1"], //  subMenu
-            selectedKeys: [], // menuItem 默认选中
+            openKeys: getOpenKeyStore, //  subMenu
+            selectedKeys: getSelectedKeysStore, // menuItem 默认选中
         });
 
+        //  获取当前选中的submenu
         const handleOpenSubMenu = (submenu: string[]) => {
-            console.log(submenu);
+            setOpenKeyStore(submenu);
         };
 
+        //  获取当前选中的 menuItem
+        const handleMenuSelect = ({ selectedKeys }: any) => {
+            setSelectedKeysStore(selectedKeys);
+        };
 
-        const c = (MenuItem :any)=>{
-            const {keyPath} = MenuItem ;
-            if(keyPath.length > 1){
-                
-            }else{
-                state.selectedKeys = keyPath;
-                console.log( state.selectedKeys);
-                
-            }
-        }
         return {
+            ...toRefs(state),
             getMenuRoutes,
             handleOpenSubMenu,
-            ...toRefs(state),
-            c,
+            handleMenuSelect,
         };
     },
 });

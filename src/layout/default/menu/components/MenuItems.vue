@@ -1,13 +1,13 @@
 <!--
  * @Description: 导航菜单 递归组件
  * @Date: 2021-06-17 21:35:15
- * @LastEditTime: 2021-06-18 10:43:40
+ * @LastEditTime: 2021-06-21 15:23:37
 -->
 
 <template>
     <div>
         <template v-if="router.children && router.children.length > 0">
-             <SubMenu :key="router.name">
+            <SubMenu :key="router.name">
                 <template #title>
                     <span>
                         <span>{{ router.meta.title }}</span>
@@ -15,7 +15,7 @@
                 </template>
                 <template v-for="r of router.children" :key="r.name">
                     <template v-if="r.children && r.children.length > 0">
-                        <MenuItems :router="r" ></MenuItems>
+                        <MenuItems :router="r"></MenuItems>
                     </template>
                     <template v-else>
                         <MenuItem
@@ -29,10 +29,7 @@
             </SubMenu>
         </template>
         <template v-else>
-             <MenuItem
-                :key="router.name"
-                @click="handleRouteJump(router.name)"
-            >
+            <MenuItem :key="router.name" @click="handleRouteJump(router.name)">
                 <span>{{ router.meta.title }}</span>
             </MenuItem>
         </template>
@@ -40,31 +37,30 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent } from "vue";
 import { Menu } from "ant-design-vue";
-import { useRouter } from 'vue-router';
+import { useRouter } from "vue-router";
 export default defineComponent({
-    props:["router"],
-    name:"MenuItems",
-    components:{
-        MenuItem:Menu.Item,
-        SubMenu:Menu.SubMenu
+    props: ["router"],
+    name: "MenuItems",
+    components: {
+        MenuItem: Menu.Item,
+        SubMenu: Menu.SubMenu,
     },
-    setup () {
+    setup() {
         const route = useRouter();
-        const handleRouteJump = (name:string) =>{
+        const handleRouteJump = (name: string) => {
             route.push({
-                name
-            })
-        }
+                name,
+            });
+        };
 
         return {
-            handleRouteJump
-        }
-    }
-})
+            handleRouteJump,
+        };
+    },
+});
 </script>
 
 <style scoped>
-
 </style>

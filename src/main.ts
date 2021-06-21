@@ -1,19 +1,20 @@
 /*
  * @Description: main
  * @Date: 2021-06-16 15:53:17
- * @LastEditTime: 2021-06-18 10:17:26
+ * @LastEditTime: 2021-06-21 10:43:10
  */
 import { createApp } from 'vue'
 import App from './App.vue'
 
 import router, { setupRouter } from "./router";
 import { setupRouterGuard } from "@/router/guard";
+import { setupStore } from "@/store";
 import 'ant-design-vue/dist/antd.css';
 import 'virtual:windi.css'
 
 ; (async () => {
     const app = createApp(App)
-
+    setupStore(app);
     //  加载路由
     setupRouter(app);
 
