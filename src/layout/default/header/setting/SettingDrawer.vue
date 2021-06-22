@@ -1,7 +1,7 @@
 <!--
  * @Description: 配置全局
  * @Date: 2021-06-21 15:31:16
- * @LastEditTime: 2021-06-21 18:06:10
+ * @LastEditTime: 2021-06-22 15:13:29
 -->
 <template>
     <Drawer
@@ -11,7 +11,7 @@
         :visible="settingDrawerShow"
         @close="afterVisibleChange"
     >
-        <Divider>主题颜色</Divider>
+        <Divider >主题颜色</Divider>
         <DarkNight></DarkNight>
     </Drawer>
 </template>
@@ -37,7 +37,7 @@ export default defineComponent({
         const afterVisibleChange = () => {
             emit("changeSettingDrawer", false);
         };
-
+     
         return {
             afterVisibleChange,
         };

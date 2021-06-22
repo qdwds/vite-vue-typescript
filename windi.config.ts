@@ -1,7 +1,7 @@
 /*
  * @Description: windi.css 
  * @Date: 2021-06-17 10:59:46
- * @LastEditTime: 2021-06-21 17:06:13
+ * @LastEditTime: 2021-06-22 14:34:47
  */
 import { defineConfig } from 'windicss/helpers'
 // import formsPlugin from 'windicss/plugin/forms'
@@ -20,12 +20,14 @@ export default defineConfig({
         '2xl': '1536px',
       },
       colors: {
-        ...colors
+        ...colors,
       },
     },
   },
   alias: { //  设置别名
-    'hstack': 'flex items-center',
+  },
+  shortcuts: { //  多类名组合使用
+    "bg-dark": "dark:bg-dark-500 dark:text-white dark:duration-300",//  暗夜背景切换
   },
   // plugins: [formsPlugin],
   extract: {
@@ -37,4 +39,7 @@ export default defineConfig({
       '.git'
     ],
   },
+  plugins: [
+
+  ]
 })

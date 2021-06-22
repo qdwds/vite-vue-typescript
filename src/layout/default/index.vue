@@ -1,12 +1,12 @@
 <!--
- * @Description: 
+ * @Description: 页面布局
  * @Date: 2021-06-16 17:36:34
- * @LastEditTime: 2021-06-21 16:08:20
+ * @LastEditTime: 2021-06-22 14:36:57
 -->
 <template>
     <Layout class="w-full h-full">
         <LayoutSider :trigger="null" collapsible>
-            <Menu></Menu>
+            <Menu class="bg-dark"></Menu>
         </LayoutSider>
         <Layout>
             <Header></Header>
@@ -25,7 +25,7 @@ import Menu from "./menu/index.vue";
 import Bar from "./bar/index.vue";
 export default defineComponent({
     components: {
-        LayoutSider:Layout.Sider,
+        LayoutSider: Layout.Sider,
         Layout,
         Header,
         Menu,

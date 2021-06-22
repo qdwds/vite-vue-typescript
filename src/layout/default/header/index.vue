@@ -1,23 +1,29 @@
 <!--
  * @Description: 
  * @Date: 2021-06-21 15:31:16
- * @LastEditTime: 2021-06-21 16:38:56
+ * @LastEditTime: 2021-06-22 12:06:26
 -->
 <template>
     <LayoutHeader
-        class="h-10 flex justify-between items-center pl-2 pr-2 bg-white "
+        class="
+            h-10
+            flex
+            justify-between
+            items-center
+            pl-2
+            pr-2
+            bg-white
+            bg-dark
+        "
     >
-        <div>
-            mbs
-        </div>
-
+        <div>mbs</div>
         <div class="flex">
             <Yuque></Yuque>
             <Github></Github>
             <FullScreen></FullScreen>
             <Setting></Setting>
             <LockScreen></LockScreen>
-             <UserInfo></UserInfo> 
+            <UserInfo></UserInfo>
             <!-- 
             <UserInfo></UserInfo> -->
         </div>
