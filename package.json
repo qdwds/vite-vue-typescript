@@ -7,6 +7,7 @@
   },
   "dependencies": {
     "ant-design-vue": "^2.2.0-beta.3",
+    "cytoscape": "^3.19.0",
     "nprogress": "^0.2.0",
     "pinia": "^2.0.0-beta.3",
     "vue": "^3.0.5",
@@ -15,6 +16,7 @@
     "vue-types": "^2.0.3"
   },
   "devDependencies": {
+    "@types/cytoscape": "^3.14.15",
     "@types/node": "^15.12.2",
     "@types/nprogress": "^0.2.0",
     "@vitejs/plugin-vue": "^1.2.3",
