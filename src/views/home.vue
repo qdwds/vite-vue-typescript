@@ -1,7 +1,7 @@
 <!--
  * @Description: v
  * @Date: 2021-06-16 16:12:43
- * @LastEditTime: 2021-06-22 15:49:10
+ * @LastEditTime: 2021-06-22 21:31:14
 -->
 
 
@@ -36,5 +36,3 @@
     },
   };
 </script>
-<style lang="stylus" scoped>
-</style>
