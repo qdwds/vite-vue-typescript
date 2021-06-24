@@ -1,7 +1,7 @@
 /*
  * @Description: viteconfig.ts
  * @Date: 2021-06-16 15:53:17
- * @LastEditTime: 2021-06-22 21:30:08
+ * @LastEditTime: 2021-06-23 11:25:14
  */
 import { UserConfig, ConfigEnv, defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue';
@@ -15,17 +15,18 @@ export default ({ mode }: ConfigEnv) => {
     plugins: [
       vue(),
       WindiCSS(),
-      styleImport({
-        libs: [
-          {
-            libraryName: 'ant-design-vue',
-            esModule: true,
-            resolveStyle: (name) => {
-              return `ant-design-vue/es/${name}/style/index.css`
-            }
-          }
-        ]
-      }),
+      //  动态加载 引起 windicss 失效
+      // styleImport({
+      //   libs: [
+      //     {
+      //       libraryName: 'ant-design-vue',
+      //       esModule: true,
+      //       resolveStyle: (name) => {
+      //         return `ant-design-vue/es/${name}/style/index.css`
+      //       }
+      //     }
+      //   ]
+      // }),
     ],
     build: {
       terserOptions: {

@@ -1,7 +1,7 @@
 /*
  * @Description: d3js
  * @Date: 2021-06-22 21:34:26
- * @LastEditTime: 2021-06-22 22:08:08
+ * @LastEditTime: 2021-06-24 14:41:04
  */
 
 import { AppRouteModule } from "@/router/types";
@@ -29,6 +29,14 @@ const cytoscape: AppRouteModule = {
             component: () => import("@/views/demo/cytoscape/atlas/index.vue"),
             meta: {
                 title: "知识图谱"
+            }
+        },
+        {
+            path: "sector",
+            name: "Sector",
+            component: () => import("@/views/demo/cytoscape/sector/index.vue"),
+            meta:{
+                title:"扇形"
             }
         }
     ]

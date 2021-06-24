@@ -1,10 +1,9 @@
 /*
  * @Description: windi.css 
  * @Date: 2021-06-17 10:59:46
- * @LastEditTime: 2021-06-22 14:34:47
+ * @LastEditTime: 2021-06-23 11:17:57
  */
 import { defineConfig } from 'windicss/helpers'
-// import formsPlugin from 'windicss/plugin/forms'
 import colors from 'windicss/colors';
 export default defineConfig({
   darkMode: 'class',
@@ -39,7 +38,4 @@ export default defineConfig({
       '.git'
     ],
   },
-  plugins: [
-
-  ]
 })
