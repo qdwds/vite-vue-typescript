@@ -1,7 +1,7 @@
 /*
  * @Description: 
  * @Date: 2021-06-16 17:32:16
- * @LastEditTime: 2021-06-17 17:44:03
+ * @LastEditTime: 2021-06-30 20:45:24
  */
 import { AppRouteModule, AppRouteRecordRaw } from "../types";
 export const LAYOUT = () => import("@/layout/default/index.vue");
@@ -15,7 +15,7 @@ const NOT_FOUND_ROUTE: AppRouteModule = {
         {
             path: "/:path(.*)*",
             name: "error",
-            component: () => import("@/layout/error/index.vue")
+            component: () => import("@/views/error/index.vue")
         }
     ]
 }
@@ -30,7 +30,7 @@ const root: AppRouteRecordRaw = {
 const login: AppRouteRecordRaw = {
     path: "/login",
     name: "Login",
-    component: () => import("@/layout/login/index.vue")
+    component: () => import("@/views/login/index.vue")
 }
 
 export const basicRouter = [
