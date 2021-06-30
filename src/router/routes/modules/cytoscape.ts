@@ -1,7 +1,7 @@
 /*
  * @Description: d3js
  * @Date: 2021-06-22 21:34:26
- * @LastEditTime: 2021-06-30 11:10:06
+ * @LastEditTime: 2021-06-30 17:20:20
  */
 
 import { AppRouteModule } from "@/router/types";
@@ -13,7 +13,7 @@ const cytoscape: AppRouteModule = {
     component: LAYOUT,
     meta: {
         title: "cytoscape",
-        children:true
+        orderNo:2000
     },
     children: [
         {

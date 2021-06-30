@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: 前端伪大叔
  * @Date: 2021-06-09 16:01:47
- * @LastEditTime: 2021-06-17 17:46:44
+ * @LastEditTime: 2021-06-30 17:40:32
  * @yuque: http://www.yuque.com/qdwds
  */
 
@@ -10,20 +10,21 @@ import type { AppRouteRecordRaw } from "@/router/types";
 import { LAYOUT } from "@/router/routes/basic";
 
 const a:AppRouteRecordRaw = {
-    path:"/a",
-    name:"A",
+    path:"/welcome",
+    name:"welcome",
     component:LAYOUT,
-    redirect:"/a/a",
+    redirect:"/welcome/home",
     meta:{
-        title:"a"
+        title:"欢迎页",
+        orderNo:1000
     },
     children:[
         {
-            path:"a",
-            name:"AA",
-            component:() => import("@/views/demo/a/index.vue"),
+            path:"home",
+            name:"home",
+            component:() => import("@/views/demo/home/index.vue"),
             meta:{
-                title:"a-a"
+                title:"首页"
             }
         }
     ]

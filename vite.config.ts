@@ -1,7 +1,7 @@
 /*
  * @Description: viteconfig.ts
  * @Date: 2021-06-16 15:53:17
- * @LastEditTime: 2021-06-23 11:25:14
+ * @LastEditTime: 2021-06-30 15:28:15
  */
 import { UserConfig, ConfigEnv, defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue';
@@ -14,19 +14,9 @@ export default ({ mode }: ConfigEnv) => {
   return defineConfig({
     plugins: [
       vue(),
-      WindiCSS(),
       //  动态加载 引起 windicss 失效
-      // styleImport({
-      //   libs: [
-      //     {
-      //       libraryName: 'ant-design-vue',
-      //       esModule: true,
-      //       resolveStyle: (name) => {
-      //         return `ant-design-vue/es/${name}/style/index.css`
-      //       }
-      //     }
-      //   ]
-      // }),
+      WindiCSS(),
+       
     ],
     build: {
       terserOptions: {
@@ -49,18 +39,17 @@ export default ({ mode }: ConfigEnv) => {
         less: {
           lessOptions: {
             modifyVars: {
-              'primary-color':"#FF4400",
-              'success-color': '#55D187', //  Success color
-              'error-color': '#ED6F6F', //  False color
-              'warning-color': '#EFBD47', //   Warning color
-              'border-color-base': '#EEEEEE',
-              'font-size-base': '14px', //  Main font size
-              'border-radius-base': '2px', //  Component/float fillet
+              'primary-color': '#1DA57A',
+              'link-color': '#1DA57A',
+              'border-radius-base': '2px',
             },
             javascriptEnabled: true,
           },
         },
       },
     },
+    
+
+  
   })
 }
