@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: 前端伪大叔
  * @Date: 2021-06-09 12:05:59
- * @LastEditTime: 2021-06-21 14:56:24
+ * @LastEditTime: 2021-06-30 11:59:38
  * @yuque: http://www.yuque.com/qdwds
  */
 
@@ -24,7 +24,6 @@ const menu: AppRouteModule = {
             component: () => import("@/components/RouterTransition/index.vue"),
             meta: {
                 title: "menu-1",
-                children:true
             },
             children: [
                 {
@@ -33,7 +32,6 @@ const menu: AppRouteModule = {
                     component: () => import("@/components/RouterTransition/index.vue"),
                     meta: {
                         title: "menu-1-1",
-                        children:true
                     },
                     children: [
                         {

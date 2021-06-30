@@ -1,7 +1,7 @@
 /*
  * @Description: 处理路由
  * @Date: 2021-06-17 17:37:28
- * @LastEditTime: 2021-06-21 15:07:17
+ * @LastEditTime: 2021-06-30 12:03:07
  */
 
 import type { _RouteRecordBase, RouteRecord, RouteRecordName, RouteRecordNormalized, RouteRecordRaw } from "vue-router";
@@ -34,13 +34,12 @@ const menuRoutes = (routes: RouteRecordRaw[]) => {
 }
 
 
-//	获取所有路由 存在层级的  name
+//	获取最外层的name 用于menu单选
 const routesName: any[] = [];
 export const getAllMenuName = (routes: RouteRecordRaw[]) => {
 	routes.forEach((r: _RouteRecordBase) => {
-		if (r.meta?.children && r.children && r.name) {
+		if (r.children && r.name) {
 			routesName.push(r.name);
-			getAllMenuName(r.children)
 		}
 	});
 	return routesName

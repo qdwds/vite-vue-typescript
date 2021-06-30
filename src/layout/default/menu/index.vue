@@ -1,14 +1,14 @@
 <!--
  * @Description: menu   
  * @Date: 2021-06-17 15:36:22
- * @LastEditTime: 2021-06-22 14:36:35
+ * @LastEditTime: 2021-06-30 12:02:33
 -->
 <template>
     <div>
         <Menu
             theme="dark"
             mode="inline"
-            v-model:openKeys="openKeys"
+            :openKeys="openKeys"
             v-model:selectedKeys="selectedKeys"
             @openChange="handleOpenSubMenu"
             @select="handleMenuSelect"
@@ -39,8 +39,7 @@ export default defineComponent({
         const { fileterRoutes, menuRoutes, getAllMenuName } = useHandleRoutes();
         const getFilterRoutes = fileterRoutes(routes);
         const getMenuRoutes = menuRoutes(getFilterRoutes);
-        // const routesName = getAllMenuName(getFilterRoutes);
-        // console.log(routesName);
+        const routesName = getAllMenuName(getFilterRoutes);
 
         const {
             getOpenKeyStore,
@@ -55,8 +54,16 @@ export default defineComponent({
         });
 
         //  获取当前选中的submenu
-        const handleOpenSubMenu = (submenu: string[]) => {
-            setOpenKeyStore(submenu);
+        const handleOpenSubMenu = (openKeys: string[]) => {
+            const latestOpenKey = openKeys.find(
+                (key) => state.openKeys.indexOf(key) === -1
+            );
+            if (routesName.indexOf(latestOpenKey!) === -1) {
+                state.openKeys = openKeys;
+            } else {
+                state.openKeys = latestOpenKey ? [latestOpenKey] : [];
+            }
+            setOpenKeyStore(state.openKeys);
         };
 
         //  获取当前选中的 menuItem

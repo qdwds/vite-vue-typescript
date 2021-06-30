@@ -1,37 +1,93 @@
 <!--
  * @Description: v
  * @Date: 2021-06-16 16:12:43
- * @LastEditTime: 2021-06-22 14:31:00
+ * @LastEditTime: 2021-06-30 11:57:43
 -->
 <template>
-    <div class="bg-white-5000 dark:bg-black-500">
-        <DarkNight></DarkNight>
-        <button @click="drak">change drak</button>
-        <div class="bg-yellow-200 w-10 h-10 dark:bg-dark-800 dark:text-white duration-700"></div>
-        <div class="bg-yellow-200 w-10 h-10 bg-dark"></div>
-        <div class="w-10 h-10 app-border"></div>
-        <div class="icon"></div>
-        <div class="bg-dark w-10 h-10"></div>
+    <div>
+        <a-menu
+            style="width: 256px"
+            mode="inline"
+            :openKeys="openKeys"
+            v-model:selectedKeys="selectedKeys"
+            @openChange="onOpenChange"
+        >
+            <a-sub-menu key="sub1">
+                <template #title>
+                    <span>
+                        <MailOutlined />
+                        <span>Navigation One</span>
+                    </span>
+                </template>
+                <a-menu-item key="1">Option 1</a-menu-item>
+                <a-menu-item key="2">Option 2</a-menu-item>
+                <a-menu-item key="3">Option 3</a-menu-item>
+                <a-menu-item key="4">Option 4</a-menu-item>
+            </a-sub-menu>
+            <a-sub-menu key="sub2">
+                <template #title>
+                    <span>
+                        <AppstoreOutlined />
+                        <span>Navigation Two</span>
+                    </span>
+                </template>
+                <a-menu-item key="5">Option 5</a-menu-item>
+                <a-menu-item key="6">Option 6</a-menu-item>
+                <a-sub-menu key="sub3" title="Submenu">
+                    <a-menu-item key="7">Option 7</a-menu-item>
+                    <a-menu-item key="8">Option 8</a-menu-item>
+                </a-sub-menu>
+            </a-sub-menu>
+            <a-sub-menu key="sub4">
+                <template #title>
+                    <span>
+                        <SettingOutlined />
+                        <span>Navigation Three</span>
+                    </span>
+                </template>
+                <a-menu-item key="9">Option 9</a-menu-item>
+                <a-menu-item key="10">Option 10</a-menu-item>
+                <a-menu-item key="11">Option 11</a-menu-item>
+                <a-menu-item key="12">Option 12</a-menu-item>
+            </a-sub-menu>
+        </a-menu>
     </div>
 </template>
-
 <script lang="ts">
-import { defineComponent } from "vue";
-import DarkNight from "@/components/DarkNight/index.vue";
+import { defineComponent, reactive, toRefs } from "vue";
+import {
+    MailOutlined,
+    AppstoreOutlined,
+    SettingOutlined,
+} from "@ant-design/icons-vue";
 export default defineComponent({
-    components:{
-        DarkNight
-    },
     setup() {
-        const drak = () => {
-            
+        const state = reactive({
+            rootSubmenuKeys: ["sub1", "sub2", "sub4"],
+            openKeys: ["sub1"],
+            selectedKeys: [],
+        });
+        const onOpenChange = (openKeys: string[]) => {
+            const latestOpenKey = openKeys.find((key) => {
+                return state.openKeys.indexOf(key) === -1;
+            });
+
+            if (state.rootSubmenuKeys.indexOf(latestOpenKey!) === -1) {
+                state.openKeys = openKeys;
+            } else {
+                console.log(latestOpenKey, "ggggggggggggg");
+                state.openKeys = latestOpenKey ? [latestOpenKey] : [];
+            }
         };
         return {
-            drak,
+            ...toRefs(state),
+            onOpenChange,
         };
+    },
+    components: {
+        MailOutlined,
+        AppstoreOutlined,
+        SettingOutlined,
     },
 });
 </script>
-
-<style scoped>
-</style>
