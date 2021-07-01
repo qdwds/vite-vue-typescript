@@ -1,15 +1,15 @@
 <!--
  * @Description: 页面布局
  * @Date: 2021-06-16 17:36:34
- * @LastEditTime: 2021-06-30 16:09:29
+ * @LastEditTime: 2021-07-01 22:35:15
 -->
 <template>
     <Layout class="w-full h-full">
-        <LayoutSider :trigger="null" collapsible>
+        <LayoutSider :trigger="null" collapsible v-model:collapsed="collapsed">
             <Menu class="bg-dark"></Menu>
         </LayoutSider>
         <Layout>
-            <Header></Header>
+            <Header v-model:collapsed="collapsed"></Header>
             <Tabs></Tabs>
             <Content></Content>
         </Layout>
@@ -17,7 +17,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent,ref } from "vue";
 import { Layout } from "ant-design-vue";
 import Header from "./header/index.vue";
 import Content from "./content/index.vue";
@@ -33,7 +33,10 @@ export default defineComponent({
         Tabs,
     },
     setup() {
-        return {};
+        const collapsed = ref<Boolean>(false)
+        return {
+            collapsed
+        };
     },
 });
 </script>

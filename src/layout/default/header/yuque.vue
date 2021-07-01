@@ -1,7 +1,7 @@
 <!--
  * @Description: yuque
  * @Date: 2021-06-21 15:31:16
- * @LastEditTime: 2021-06-21 16:27:19
+ * @LastEditTime: 2021-07-01 22:34:05
 -->
 <template>
     <div
@@ -17,6 +17,7 @@
             transition
             ease-in
             duration-400
+            cursor-pointer
         "
         @click="openYuque"
     >

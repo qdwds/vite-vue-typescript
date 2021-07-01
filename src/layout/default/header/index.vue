@@ -1,7 +1,7 @@
 <!--
- * @Description: 
+ * @Description: header
  * @Date: 2021-06-21 15:31:16
- * @LastEditTime: 2021-06-23 11:19:12
+ * @LastEditTime: 2021-07-01 22:40:13
 -->
 <template>
     <LayoutHeader
@@ -12,11 +12,18 @@
             items-center
             pl-2
             pr-2
-            bg-white
-            bg-dark
+            bg-white bg-dark
         "
     >
-        <div>mbs</div>
+        <div
+            class="h-10 w-10 center rounded hover:bg-gray-200 cursor-pointer"
+            @click="$emit('update:collapsed', !collapsed)"
+        >
+            <component
+                :is="collapsed ? 'menu-unfold-outlined' : 'menu-fold-outlined'"
+            ></component>
+            <!-- <Breadcrumb></Breadcrumb> -->
+        </div>
         <div class="flex">
             <Yuque></Yuque>
             <Github></Github>
@@ -24,8 +31,6 @@
             <Setting></Setting>
             <LockScreen></LockScreen>
             <UserInfo></UserInfo>
-            <!-- 
-            <UserInfo></UserInfo> -->
         </div>
     </LayoutHeader>
 </template>
@@ -35,13 +40,15 @@ import { defineComponent } from "vue";
 import { Layout } from "ant-design-vue";
 import Setting from "./setting/index.vue";
 // import Breadcrumb from "./breadcrumb/index.vue";
-import FullScreen from "./fullScreen/index.vue";
+import FullScreen from "./fullScreen.vue";
 import UserInfo from "./userInfo/index.vue";
-import Github from "./github/index.vue";
+import Github from "./github.vue";
 import LockScreen from "./lockScreen/index.vue";
-import Yuque from "./yuque/index.vue";
+import Yuque from "./yuque.vue";
+import { MenuUnfoldOutlined, MenuFoldOutlined } from "@ant-design/icons-vue";
 export default defineComponent({
     name: "Header",
+
     components: {
         LayoutHeader: Layout.Header,
         Setting,
@@ -51,7 +58,16 @@ export default defineComponent({
         Github,
         LockScreen,
         Yuque,
+        MenuUnfoldOutlined,
+        MenuFoldOutlined,
     },
+    props: {
+        collapsed: {
+            type: Boolean,
+            default: false,
+        },
+    },
+    emits: ["update:collapsed"],
     setup() {
         return {};
     },
