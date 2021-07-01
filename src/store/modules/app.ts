@@ -1,7 +1,7 @@
 /*
  * @Description: app
  * @Date: 2021-06-21 10:51:11
- * @LastEditTime: 2021-06-21 14:06:43
+ * @LastEditTime: 2021-07-01 10:19:06
  */
 
 
@@ -18,7 +18,7 @@ export const useAppStore = defineStore({
     id: "app",
     state: (): AppStore => ({
         openKeys: [],
-        selectedKeys: []
+        selectedKeys: ["home"]
     }),
     getters: {
         getOpenKeys(): string[] {

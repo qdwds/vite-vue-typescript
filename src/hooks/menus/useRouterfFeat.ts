@@ -1,11 +1,12 @@
 /*
  * @Description: 处理路由
  * @Date: 2021-06-17 17:37:28
- * @LastEditTime: 2021-06-30 17:51:23
+ * @LastEditTime: 2021-07-01 14:35:30
  */
 
 import type { _RouteRecordBase, RouteRecord, RouteRecordName, RouteRecordNormalized, RouteRecordRaw } from "vue-router";
-import { AppRouteModule } from "@/router/types";
+import { ITabsRouteInfo } from "@/store/modules/tabs";
+import { _RouteLocationBase } from "vue-router";
 
 const routesSort = (meta: string, orderNo: string) => {
 	return function (a: any, b: any) {
@@ -55,12 +56,19 @@ export const getAllMenuName = (routes: RouteRecordRaw[]) => {
 	return routesName
 }
 
+//	获取当前页面路由信息
+export const getSimpleRoute = (route: _RouteLocationBase): ITabsRouteInfo => {
+	const { fullPath, hash, meta, name, params, path, query } = route;
+	return { fullPath, hash, meta, name, params, path, query };
+};
+
 
 export const useHandleRoutes = () => {
 	return {
 		fileterRoutes,
 		menuRoutes,
 		getAllMenuName,
-		routesSort
+		routesSort,
+		getSimpleRoute
 	}
 }

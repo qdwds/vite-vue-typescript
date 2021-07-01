@@ -1,7 +1,7 @@
 <!--
  * @Description: 知识图库
  * @Date: 2021-06-22 22:06:31
- * @LastEditTime: 2021-06-28 11:21:48
+ * @LastEditTime: 2021-07-01 15:57:25
 -->
 
 <template>
@@ -107,6 +107,7 @@ export default defineComponent({
             }
         };
         const handleAdd = () => {
+            console.log(3);
             cy.add([
                 {
                     group: "nodes",
@@ -152,9 +153,9 @@ export default defineComponent({
             createCY();
             clickEvent();
             //  获取id
-            console.log(cy.getElementById("n0"));
-            //  自带选择器
-            console.log(cy.$("node[id='n0']"));
+            // console.log(cy.getElementById("n0"));
+            // //  自带选择器
+            // console.log(cy.$("node[id='n0']"));
         });
         return { cyRef, handleAdd, handleRemove };
     },

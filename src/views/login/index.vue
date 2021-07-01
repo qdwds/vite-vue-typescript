@@ -1,10 +1,17 @@
 <!--
  * @Description: 
  * @Date: 2021-06-16 17:41:07
- * @LastEditTime: 2021-06-30 23:00:33
+ * @LastEditTime: 2021-07-01 10:16:03
 -->
 
 <template>
+    <video
+        src="/mp4/login.mp4"
+        autoplay
+        loop
+        style="object-fit: fill"
+        class="w-full h-full absolute l-0 t-0"
+    ></video>
     <div class="center w-full h-full bg-dark-500">
         <div class="w-sm h-sl p-4 bg-light-200 rounded relative animate-box">
             <div class="w-full text-center text-xl mb-4 relative animate-l20">
@@ -54,14 +61,13 @@
     </div>
 </template>
 <script lang="ts">
-import { ValidateErrorEntity } from "ant-design-vue/es/form/interface";
 import { defineComponent, reactive, ref, UnwrapRef } from "vue";
 import { Form, Button, Input, Divider } from "ant-design-vue";
 import { GithubOutlined } from "@ant-design/icons-vue";
 import { useRouter } from "vue-router";
 interface FormState {
-    pass: string;
-    checkPass: string;
+    username: string;
+    password: string;
 }
 export default defineComponent({
     components: {
@@ -77,12 +83,11 @@ export default defineComponent({
         const router = useRouter();
         const formRef = ref();
         const formState: UnwrapRef<FormState> = reactive({
-            pass: "admin",
-            checkPass: "admin",
+            username: "admin",
+            password: "admin",
         });
 
         const submitUserInfo = () => {
-            console.log(123);
             router.push({
                 name: "home",
             });
