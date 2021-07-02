@@ -1,12 +1,12 @@
 <!--
  * @Description: 页面布局
  * @Date: 2021-06-16 17:36:34
- * @LastEditTime: 2021-07-02 11:06:04
+ * @LastEditTime: 2021-07-02 15:54:24
 -->
 <template>
     <Layout class="w-full h-full">
         <LayoutSider :trigger="null" collapsible v-model:collapsed="collapsed">
-            <Menu class="bg-dark"></Menu>
+            <Menu></Menu>
         </LayoutSider>
         <Layout>
             <Header v-model:collapsed="collapsed"></Header>
