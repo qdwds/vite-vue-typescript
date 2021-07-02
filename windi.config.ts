@@ -1,7 +1,7 @@
 /*
  * @Description: windi.css 
  * @Date: 2021-06-17 10:59:46
- * @LastEditTime: 2021-06-30 23:01:44
+ * @LastEditTime: 2021-07-02 11:15:26
  */
 import { defineConfig } from 'windicss/helpers'
 import colors from 'windicss/colors';
@@ -32,12 +32,12 @@ export default defineConfig({
       },
       keyframes: {
         wiggle: {
-          '0%': { left: "100px" ,opacity: "0" },
-          '100%': { left: "0px",opacity: "1"  },
+          '0%': { left: "100px", opacity: "0" },
+          '100%': { left: "0px", opacity: "1" },
         },
         left: {
           "0%": { left: "70px", opacity: "0" },
-          "10%":{opacity:"0"},
+          "10%": { opacity: "0" },
           "100%": { left: "0px", opacity: "1" },
         }
       },
@@ -47,16 +47,17 @@ export default defineConfig({
   },
   shortcuts: { //  多类名组合使用
     "bg-dark": "dark:bg-dark-500 dark:text-white dark:duration-300",//  暗夜背景切换
-    "center": "flex items-center justify-center"
+    "center": "flex items-center justify-center",
+    "icon-style": "p-1 rounded flex justify-center items-center hover:bg-gray-200 transition ease-in duration-400 cursor-pointer"
   },
   // plugins: [formsPlugin],
   extract: {
-    include: [
-      'src/**/*.{vue,html,jsx,tsx}'
-    ],
-    exclude: [
-      'node_modules',
-      '.git'
-    ],
-  },
+  include: [
+    'src/**/*.{vue,html,jsx,tsx}'
+  ],
+  exclude: [
+    'node_modules',
+    '.git'
+  ],
+},
 })

@@ -1,31 +1,16 @@
 <!--
  * @Description: 
  * @Date: 2021-06-21 15:31:16
- * @LastEditTime: 2021-06-21 16:57:32
+ * @LastEditTime: 2021-07-02 12:07:53
 -->
 <template>
-    <div
-        class="
-            h-10
-            w-24
-            p-1
-            rounded
-            flex
-            justify-center
-            items-center
-            hover:bg-gray-200
-            transition
-            ease-in
-            duration-400
-            cursor-pointer
-        "
-    >
-        <Dropdown class=" h-10 flex justify-center items-center overflow-hidden">
+    <div>
+        <Dropdown class="h-10 flex justify-center items-center overflow-hidden">
             <div>
                 <Avatar class="mr-2">
-                    <template #icon><UserOutlined class="text-xl" /> </template>
+                    <template #icon><UserOutlined class="text-sm" /> </template>
                 </Avatar>
-                <span class="truncate">admin</span>
+                <span class="truncate text-sm">admin</span>
             </div>
             <template #overlay>
                 <Menu>
@@ -34,7 +19,7 @@
                         v-for="menu in icon_menu"
                         @click="iconMenuClick(menu.id)"
                     >
-                        {{ menu.name }}
+                        <span class="text-sm">{{ menu.name }}</span>
                     </MenuItem>
                 </Menu>
             </template>

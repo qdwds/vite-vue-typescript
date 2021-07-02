@@ -1,7 +1,7 @@
 <!--
  * @Description: 配置相关
  * @Date: 2021-07-01 21:34:45
- * @LastEditTime: 2021-07-01 21:53:35
+ * @LastEditTime: 2021-07-02 12:05:59
 -->
 
 
@@ -11,7 +11,7 @@
             class="
                 h-8
                 w-8
-                text-xl
+                text-sm
                 cursor-pointer
                 rounded
                 center
@@ -24,7 +24,7 @@
             class="
                 h-8
                 w-8
-                text-xl
+                text-sm
                 cursor-pointer
                 rounded
                 center

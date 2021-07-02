@@ -1,7 +1,7 @@
 <!--
  * @Description: 页面布局
  * @Date: 2021-06-16 17:36:34
- * @LastEditTime: 2021-07-01 22:35:15
+ * @LastEditTime: 2021-07-02 11:06:04
 -->
 <template>
     <Layout class="w-full h-full">
@@ -17,7 +17,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent,ref } from "vue";
+import { defineComponent, ref } from "vue";
 import { Layout } from "ant-design-vue";
 import Header from "./header/index.vue";
 import Content from "./content/index.vue";
@@ -33,9 +33,9 @@ export default defineComponent({
         Tabs,
     },
     setup() {
-        const collapsed = ref<Boolean>(false)
+        const collapsed = ref<boolean>(false);
         return {
-            collapsed
+            collapsed,
         };
     },
 });

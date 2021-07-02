@@ -1,27 +1,13 @@
 <!--
  * @Description: yuque
  * @Date: 2021-06-21 15:31:16
- * @LastEditTime: 2021-07-01 22:34:05
+ * @LastEditTime: 2021-07-02 12:06:42
 -->
 <template>
     <div
-        class="
-            h-10
-            w-10
-            p-1
-            rounded
-            flex
-            justify-center
-            items-center
-            hover:bg-gray-200
-            transition
-            ease-in
-            duration-400
-            cursor-pointer
-        "
         @click="openYuque"
     >
-        <YuqueOutlined class="text-xl" />
+        <YuqueOutlined class="text-sm" />
     </div>
 </template>
 

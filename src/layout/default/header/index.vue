@@ -1,22 +1,12 @@
 <!--
  * @Description: header
  * @Date: 2021-06-21 15:31:16
- * @LastEditTime: 2021-07-01 22:40:13
+ * @LastEditTime: 2021-07-02 12:10:41
 -->
 <template>
-    <LayoutHeader
-        class="
-            h-10
-            flex
-            justify-between
-            items-center
-            pl-2
-            pr-2
-            bg-white bg-dark
-        "
-    >
+    <div class=" h-10 flex justify-between items-center pl-2 pr-2 bg-white bg-dark">
         <div
-            class="h-10 w-10 center rounded hover:bg-gray-200 cursor-pointer"
+            class="h-10 w-10 icon-style"
             @click="$emit('update:collapsed', !collapsed)"
         >
             <component
@@ -25,14 +15,14 @@
             <!-- <Breadcrumb></Breadcrumb> -->
         </div>
         <div class="flex">
-            <Yuque></Yuque>
-            <Github></Github>
-            <FullScreen></FullScreen>
-            <Setting></Setting>
-            <LockScreen></LockScreen>
-            <UserInfo></UserInfo>
+            <Yuque class="h-10 w-10 icon-style"></Yuque>
+            <Github class="h-10 w-10 icon-style"></Github>
+            <FullScreen class="h-10 w-10 icon-style"></FullScreen>
+            <Setting class="h-10 w-10 icon-style"></Setting>
+            <LockScreen class="h-10 w-10 icon-style"></LockScreen>
+            <UserInfo class="h-10 w-24 icon-style"></UserInfo>
         </div>
-    </LayoutHeader>
+    </div>
 </template>
 
 <script lang="ts">
@@ -73,3 +63,9 @@ export default defineComponent({
     },
 });
 </script>
+
+<style lang="less" scoped>
+:deep(.ant-layout-header) {
+    height: 2.5rem !important;
+}
+</style>

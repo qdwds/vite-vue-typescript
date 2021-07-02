@@ -1,30 +1,13 @@
 <!--
  * @Description: 全局设置
  * @Date: 2021-06-21 15:31:16
- * @LastEditTime: 2021-06-22 14:56:26
+ * @LastEditTime: 2021-07-02 12:07:10
 -->
 <template>
-  
-        
      <div
-        class="
-            h-10
-            w-10
-            p-1
-            rounded
-            flex
-            justify-center
-            items-center
-            hover:bg-gray-200
-            transition
-            ease-in
-            duration-400
-            cursor-pointer
-        "
         @click="changeSettingDrawer"
     >
-        <SettingOutlined class="text-xl" />
-        
+        <SettingOutlined class="text-sm" />
         <SettingDrawer
             @changeSettingDrawer="changeSettingDrawer"
             :settingDrawerShow="settingDrawerShow"
@@ -43,7 +26,7 @@ export default defineComponent({
     },
     setup() {
         //  drawer 显示转态
-        const settingDrawerShow = ref<Boolean>(false);
+        const settingDrawerShow = ref<boolean>(false);
         const changeSettingDrawer = (): void => {
             settingDrawerShow.value = !settingDrawerShow.value;
         };

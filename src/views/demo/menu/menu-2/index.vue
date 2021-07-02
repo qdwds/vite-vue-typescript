@@ -5,7 +5,7 @@
 -->
 
 <template>
-    <div class="w-full h-20 bg-yellow-500 text-center text-white text-xl hover:bg-yellow-400">
+    <div class="w-full h-20 bg-yellow-500 text-center text-white text-xl hover:bg-yellow-600">
         menu-2
     </div>
 </template>
