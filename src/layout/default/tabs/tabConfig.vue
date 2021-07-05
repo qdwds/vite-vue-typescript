@@ -1,7 +1,7 @@
 <!--
  * @Description: 配置相关
  * @Date: 2021-07-01 21:34:45
- * @LastEditTime: 2021-07-02 12:05:59
+ * @LastEditTime: 2021-07-05 15:25:20
 -->
 
 
@@ -45,13 +45,10 @@ export default defineComponent({
         FullscreenOutlined,
     },
     setup() {
-        const refreshRoute = ()=>{
-
-        }
-        const fullScreen = ()=>{
+        const refreshRoute = () => {};
+        const fullScreen = () => {
             console.log("切换全屏，移出其他组件");
-            
-        }
+        };
         return {
             refreshRoute,
             fullScreen,

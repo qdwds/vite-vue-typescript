@@ -1,12 +1,12 @@
 <!--
  * @Description: header
  * @Date: 2021-06-21 15:31:16
- * @LastEditTime: 2021-07-02 12:10:41
+ * @LastEditTime: 2021-07-05 15:16:08
 -->
 <template>
-    <div class=" h-10 flex justify-between items-center pl-2 pr-2 bg-white bg-dark">
+    <div class="h-10 flex justify-between items-center pl-2 pr-2 dark">
         <div
-            class="h-10 w-10 icon-style"
+            class="h-10 w-10 header_icon"
             @click="$emit('update:collapsed', !collapsed)"
         >
             <component
@@ -15,12 +15,12 @@
             <!-- <Breadcrumb></Breadcrumb> -->
         </div>
         <div class="flex">
-            <Yuque class="h-10 w-10 icon-style"></Yuque>
-            <Github class="h-10 w-10 icon-style"></Github>
-            <FullScreen class="h-10 w-10 icon-style"></FullScreen>
-            <Setting class="h-10 w-10 icon-style"></Setting>
-            <LockScreen class="h-10 w-10 icon-style"></LockScreen>
-            <UserInfo class="h-10 w-24 icon-style"></UserInfo>
+            <Yuque class="h-10 w-10 header_icon"></Yuque>
+            <Github class="h-10 w-10 header_icon"></Github>
+            <FullScreen class="h-10 w-10 header_icon"></FullScreen>
+            <Setting class="h-10 w-10 header_icon"></Setting>
+            <LockScreen class="h-10 w-10 header_icon"></LockScreen>
+            <UserInfo class="h-10 w-24 header_icon"></UserInfo>
         </div>
     </div>
 </template>

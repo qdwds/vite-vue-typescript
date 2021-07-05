@@ -1,38 +1,38 @@
 <!--
  * @Description: v
  * @Date: 2021-06-16 16:12:43
- * @LastEditTime: 2021-06-22 21:31:14
+ * @LastEditTime: 2021-07-05 14:53:57
 -->
 
 
 <template>
-  <div>
-    <a-button type="primary" @click="info">1111</a-button>
-    <a-breadcrumb>
-      <a-breadcrumb-item>Home</a-breadcrumb-item>
-      <a-breadcrumb-item><a href="">Application Center</a></a-breadcrumb-item>
-      <a-breadcrumb-item><a href="">Application List</a></a-breadcrumb-item>
-      <a-breadcrumb-item>An Application</a-breadcrumb-item>
-    </a-breadcrumb>
-  </div>
+    <div>
+      <div class="2-20 h-20 bg-yellow-100 dark:bg-black"></div>
+      <div class="2-20 h-20 bg-yellow-100 dark"></div>
+    
+        <button  @click="info">12111</button>
+    </div>
 </template>
-<script>
-  import { message, notification } from 'ant-design-vue';
-  export default {
+<script lang="ts">
+export default {
     setup() {
-      const info = () => {
-        message.info('This is a normal message');
-        notification.info({
-          message: 'Notification Title',
-          description:
-            'This is the content of the notification. This is the content of the notification. This is the content of the notification.',
-        });
-      };
-      return {
-        info,
-      };
+      let a = true;
+        const info = () => {
+          console.log(document.getElementById("html"));
+          if(a){
+
+            document.getElementById("html").classList.add("dark");
+            a=false
+          }else{
+            document.getElementById("html").classList.remove("dark");
+            a=true
+            
+
+          }
+        };
+        return {
+          info
+        };
     },
-    components: {
-    },
-  };
+};
 </script>

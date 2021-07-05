@@ -1,16 +1,16 @@
 <!--
  * @Description: 暗夜主题切换
  * @Date: 2021-06-21 17:48:28
- * @LastEditTime: 2021-06-21 18:01:37
+ * @LastEditTime: 2021-07-05 14:50:55
 -->
 
 
 <template>
-    <div class="flex justify-center items-center">
+    <div class="center">
         <Switch
+            size="default"
             v-model:checked="checked"
             @change="handleGlobalColor"
-            class="h-7 w-14 pl-1 pr-1"
         >
             <template #checkedChildren>
                 <ArrowLeftOutlined />
@@ -55,11 +55,10 @@ export default defineComponent({
 </script>
 
 <style scoped>
-.ant-switch-loading-icon,
-.ant-switch::after {
-    top: 4px;
-}
 .ant-switch {
     background: black;
+}
+.anticon {
+    display: flex;
 }
 </style>

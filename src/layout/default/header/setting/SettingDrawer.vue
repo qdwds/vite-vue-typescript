@@ -1,7 +1,7 @@
 <!--
  * @Description: 配置全局
  * @Date: 2021-06-21 15:31:16
- * @LastEditTime: 2021-07-02 14:25:08
+ * @LastEditTime: 2021-07-05 16:35:41
 -->
 <template>
     <Drawer
@@ -11,16 +11,20 @@
         :visible="settingDrawerShow"
         @close="afterVisibleChange"
     >
-        <Divider>主题颜色</Divider>
-        <DarkNight></DarkNight>
-        <Divider>界面功能</Divider>
+        <div class="w-full h-full flex justify-center dark">
+            <div class="w-4/5 h-full pt-14 box-border flex-col">
+                <Divider>主题颜色</Divider>
+                <DarkNight></DarkNight>
+                <Divider>界面功能</Divider>
+            </div>
+        </div>
     </Drawer>
 </template>
 
 <script lang="ts">
 import { defineComponent, ref } from "vue";
 import { Drawer, Switch } from "ant-design-vue";
-import { Divider } from "ant-design-vue";
+import Divider from "@/components/Divider/index.vue";
 import DarkNight from "@/components/DarkNight/index.vue";
 export default defineComponent({
     props: {
@@ -46,5 +50,3 @@ export default defineComponent({
 });
 </script>
 
-<style scoped>
-</style>
