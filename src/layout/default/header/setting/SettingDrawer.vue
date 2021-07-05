@@ -1,7 +1,7 @@
 <!--
  * @Description: 配置全局
  * @Date: 2021-06-21 15:31:16
- * @LastEditTime: 2021-07-05 16:35:41
+ * @LastEditTime: 2021-07-05 22:17:41
 -->
 <template>
     <Drawer
@@ -49,4 +49,3 @@ export default defineComponent({
     },
 });
 </script>
-
