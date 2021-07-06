@@ -1,7 +1,7 @@
 <!--
  * @Description: 配置相关
  * @Date: 2021-07-01 21:34:45
- * @LastEditTime: 2021-07-05 15:25:20
+ * @LastEditTime: 2021-07-06 11:28:24
 -->
 
 
@@ -37,15 +37,22 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent, unref } from "vue";
 import { SyncOutlined, FullscreenOutlined } from "@ant-design/icons-vue";
+import { useRoute, useRouter } from "vue-router";
 export default defineComponent({
     components: {
         SyncOutlined,
         FullscreenOutlined,
     },
     setup() {
-        const refreshRoute = () => {};
+        const route = useRoute();
+        const router = useRouter();
+        const refreshRoute = () => {
+            router.push({
+                path: "/redirect" + unref(route).fullPath,
+            });
+        };
         const fullScreen = () => {
             console.log("切换全屏，移出其他组件");
         };

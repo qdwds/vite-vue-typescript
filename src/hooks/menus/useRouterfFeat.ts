@@ -1,7 +1,7 @@
 /*
  * @Description: 处理路由
  * @Date: 2021-06-17 17:37:28
- * @LastEditTime: 2021-07-01 14:35:30
+ * @LastEditTime: 2021-07-06 11:22:25
  */
 
 import type { _RouteRecordBase, RouteRecord, RouteRecordName, RouteRecordNormalized, RouteRecordRaw } from "vue-router";
@@ -22,7 +22,8 @@ const fileterRoutes = (routes: RouteRecordRaw[]): RouteRecordRaw[] => {
 	const router=  routes.filter(r =>
 		r.name !== "Login" &&
 		r.name !== "Root" &&
-		r.name !== "Error"
+		r.name !== "Error" && 
+		r.name !== "Redirect"
 	)
 	 return router.sort(routesSort("meta", "orderNo"));
 }

@@ -1,7 +1,7 @@
 <!--
  * @Description: tabs 
  * @Date: 2021-07-01 21:28:51
- * @LastEditTime: 2021-07-01 21:33:43
+ * @LastEditTime: 2021-07-06 11:34:37
 -->
 
 <template>
@@ -57,6 +57,7 @@ export default defineComponent({
         watch(
             () => route.fullPath,
             (to) => {
+                if(to.includes("redirect")) return
                 state.activeKey = to;
                 setInfoTabs(getSimpleRoute(route));
             }
