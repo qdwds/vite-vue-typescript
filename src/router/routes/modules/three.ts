@@ -1,7 +1,7 @@
 /*
  * @Description: three
  * @Date: 2021-07-06 16:38:48
- * @LastEditTime: 2021-07-06 16:46:02
+ * @LastEditTime: 2021-07-06 17:32:48
  */
 
 import { AppRouteModule } from "@/router/types";
@@ -12,15 +12,15 @@ const three:AppRouteModule = {
     path:"/three",
     name:"Three",
     component:LAYOUT,
-    redirect:"/three/word",
+    redirect:"/three/world",
     meta:{
         title:"Three",
         orderNo:6000
     },
     children:[
         {
-            path:"word",
-            name:"Word",
+            path:"world",
+            name:"World",
             component:()=>import("@/views/demo/threejs/world/index.vue"),
             meta:{
                 title:"球的世界"

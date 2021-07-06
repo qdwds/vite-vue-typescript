@@ -1,7 +1,7 @@
 /*
  * @Description: router
  * @Date: 2021-06-16 16:14:15
- * @LastEditTime: 2021-06-17 11:04:14
+ * @LastEditTime: 2021-07-06 17:41:59
  */
 import type { App } from "vue";
 import { createRouter, createWebHashHistory, RouteRecordRaw } from "vue-router";

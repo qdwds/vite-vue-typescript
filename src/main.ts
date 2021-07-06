@@ -1,7 +1,7 @@
 /*
  * @Description: main
  * @Date: 2021-06-16 15:53:17
- * @LastEditTime: 2021-07-06 11:47:30
+ * @LastEditTime: 2021-07-06 17:41:21
  */
 import { createApp } from 'vue'
 import App from './App.vue'
@@ -21,7 +21,7 @@ async function bootstrap(){
     setupRouterGuard();
 
     await router.isReady();
-    
+ 
     app.mount('#app');
 }
 bootstrap();
