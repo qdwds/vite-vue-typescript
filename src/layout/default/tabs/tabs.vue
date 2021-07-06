@@ -1,30 +1,30 @@
 <!--
  * @Description: tabs 
  * @Date: 2021-07-01 21:28:51
- * @LastEditTime: 2021-07-06 11:57:27
+ * @LastEditTime: 2021-07-06 17:09:29
 -->
 
 <template>
     <Tabs
-            v-model:activeKey="activeKey"
-            hide-add
-            type="editable-card"
-            size="small"
-            @change="changeTab"
-            @edit="delTabItem"
-        >
-            <template v-for="pageItem in getInfoTabs" :key="pageItem.fullPath">
-                <TabPane>
-                    <template #tab>
-                        <Dropdown :trigger="['contextmenu']">
-                            <div style="display: inline-block">
-                                {{ pageItem.meta.title }}
-                            </div>
-                        </Dropdown>
-                    </template>
-                </TabPane>
-            </template>
-        </Tabs>
+        v-model:activeKey="activeKey"
+        hide-add
+        type="editable-card"
+        size="small"
+        @change="changeTab"
+        @edit="delTabItem"
+    >
+        <template v-for="pageItem in getInfoTabs" :key="pageItem.fullPath">
+            <TabPane>
+                <template #tab>
+                    <Dropdown :trigger="['contextmenu']">
+                        <div style="display: inline-block">
+                            {{ pageItem.meta.title }}
+                        </div>
+                    </Dropdown>
+                </template>
+            </TabPane>
+        </template>
+    </Tabs>
 </template>
 
 <script lang="ts">
@@ -57,7 +57,7 @@ export default defineComponent({
         watch(
             () => route.fullPath,
             (to) => {
-                if(to.includes("redirect")) return
+                if (to.includes("redirect") || to.includes("login")) return;
                 state.activeKey = to;
                 setInfoTabs(getSimpleRoute(route));
             }
@@ -90,22 +90,22 @@ export default defineComponent({
             delTabItem,
         };
     },
-})
+});
 </script>
 
 <style lang="less" scoped>
-:deep(.ant-tabs-bar){
+:deep(.ant-tabs-bar) {
     margin: 0;
     border: 0;
 }
 :deep(.ant-tabs-tab-active),
-:deep(.ant-tabs-tab){
+:deep(.ant-tabs-tab) {
     height: 30px !important;
     line-height: 30px !important;
     border: 1px solid #f0f0f0 !important;
 }
 :deep(.ant-tabs-tab-prev),
-:deep(.ant-tabs-tab-next){
+:deep(.ant-tabs-tab-next) {
     height: 1.5rem;
 }
 </style>

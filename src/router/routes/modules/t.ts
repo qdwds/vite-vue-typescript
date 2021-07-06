@@ -1,7 +1,7 @@
 /*
  * @Description: 
  * @Date: 2021-06-16 16:17:47
- * @LastEditTime: 2021-06-30 17:20:46
+ * @LastEditTime: 2021-07-06 16:44:10
  */
 
 import { AppRouteModule } from "@/router/types";
@@ -12,7 +12,7 @@ const t:AppRouteModule = {
     component:LAYOUT,
     meta:{
         title:"t",
-        orderNo:4000
+        orderNo:5000
     },
     children:[
         {

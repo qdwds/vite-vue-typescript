@@ -1,7 +1,7 @@
 <!--
  * @Description: menu   
  * @Date: 2021-06-17 15:36:22
- * @LastEditTime: 2021-07-06 15:36:35
+ * @LastEditTime: 2021-07-06 17:10:21
 -->
 <template>
     <div>
@@ -26,7 +26,8 @@ import { useHandleRoutes } from "@/hooks/menus/useRouterfFeat";
 import { useRouter } from "vue-router";
 import MenuItems from "./components/MenuItems.vue";
 import { Menu } from "ant-design-vue";
-import { useMenuStore } from "@/hooks/menus/useRouterMenu";
+import { storage } from "@/utils/cache";
+
 export default defineComponent({
     components: {
         MenuItems,
@@ -40,17 +41,10 @@ export default defineComponent({
         const getFilterRoutes = fileterRoutes(routes);
         const getMenuRoutes = menuRoutes(getFilterRoutes);
         const routesName = getAllMenuName(getFilterRoutes);
-
-        const {
-            getOpenKeyStore,
-            getSelectedKeysStore,
-            setOpenKeyStore,
-            setSelectedKeysStore,
-        } = useMenuStore();
-
+            
         const state = reactive({
-            openKeys: getOpenKeyStore, //  subMenu
-            selectedKeys: getSelectedKeysStore, // menuItem 默认选中
+            openKeys:storage.get("openKeys")|| [""], //  subMenu
+            selectedKeys: storage.get("selectedKeys") || ["home"], // menuItem 默认选中
         });
 
         //  获取当前选中的submenu
@@ -63,12 +57,12 @@ export default defineComponent({
             } else {
                 state.openKeys = latestOpenKey ? [latestOpenKey] : [];
             }
-            setOpenKeyStore(state.openKeys);
+            storage.set("openKeys",state.openKeys)
         };
 
         //  获取当前选中的 menuItem
         const handleMenuSelect = ({ selectedKeys }: any) => {
-            setSelectedKeysStore(selectedKeys);
+            storage.set("selectedKeys",state.selectedKeys);
         };
 
         

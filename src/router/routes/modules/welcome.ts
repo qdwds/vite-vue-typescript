@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: 前端伪大叔
  * @Date: 2021-06-09 16:01:47
- * @LastEditTime: 2021-06-30 17:40:32
+ * @LastEditTime: 2021-07-06 16:33:26
  * @yuque: http://www.yuque.com/qdwds
  */
 
@@ -22,7 +22,7 @@ const a:AppRouteRecordRaw = {
         {
             path:"home",
             name:"home",
-            component:() => import("@/views/demo/home/index.vue"),
+            component:() => import("@/views/demo/welcome/home/index.vue"),
             meta:{
                 title:"首页"
             }
