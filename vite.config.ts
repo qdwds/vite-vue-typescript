@@ -1,12 +1,12 @@
 /*
  * @Description: viteconfig.ts
  * @Date: 2021-06-16 15:53:17
- * @LastEditTime: 2021-07-05 22:14:07
+ * @LastEditTime: 2021-07-06 11:46:14
  */
 import { ConfigEnv, defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue';
 import { resolve } from 'path';
-import styleImport from 'vite-plugin-style-import';
+// import styleImport from 'vite-plugin-style-import';
 
 
 export default ({ mode }: ConfigEnv) => {

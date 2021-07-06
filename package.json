@@ -6,6 +6,7 @@
     "dev": "vite"
   },
   "dependencies": {
+    "@vueuse/core": "^5.1.0",
     "ant-design-vue": "^2.2.0-beta.3",
     "cytoscape": "^3.19.0",
     "nprogress": "^0.2.0",

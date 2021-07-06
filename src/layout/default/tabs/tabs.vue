@@ -1,7 +1,7 @@
 <!--
  * @Description: tabs 
  * @Date: 2021-07-01 21:28:51
- * @LastEditTime: 2021-07-06 11:34:37
+ * @LastEditTime: 2021-07-06 11:57:27
 -->
 
 <template>
@@ -103,5 +103,9 @@ export default defineComponent({
     height: 30px !important;
     line-height: 30px !important;
     border: 1px solid #f0f0f0 !important;
+}
+:deep(.ant-tabs-tab-prev),
+:deep(.ant-tabs-tab-next){
+    height: 1.5rem;
 }
 </style>

@@ -1,7 +1,7 @@
 <!--
  * @Description: tabs
  * @Date: 2021-06-21 16:07:17
- * @LastEditTime: 2021-07-05 16:37:08
+ * @LastEditTime: 2021-07-06 16:07:08
 -->
 
 <template>
@@ -33,6 +33,6 @@ export default defineComponent({
     components:{
         Tabs,
         TabConfig,
-    }
+    },
 });
 </script>

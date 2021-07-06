@@ -1,7 +1,7 @@
 /*
  * @Description: main
  * @Date: 2021-06-16 15:53:17
- * @LastEditTime: 2021-07-05 10:46:55
+ * @LastEditTime: 2021-07-06 11:47:30
  */
 import { createApp } from 'vue'
 import App from './App.vue'
@@ -9,7 +9,6 @@ import router, { setupRouter } from "./router";
 import { setupRouterGuard } from "@/router/guard";
 import { setupStore } from "@/store";
 import "./styles/index.less";
-// import 'virtual:windi.css';
 
 
 

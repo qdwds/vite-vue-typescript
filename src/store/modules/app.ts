@@ -1,7 +1,7 @@
 /*
  * @Description: app
  * @Date: 2021-06-21 10:51:11
- * @LastEditTime: 2021-07-01 10:19:06
+ * @LastEditTime: 2021-07-06 16:04:44
  */
 
 
@@ -12,13 +12,17 @@ import { getSess, setSess } from "@/utils/storage";
 
 interface AppStore {
     openKeys: string[];
-    selectedKeys: string[]
+    selectedKeys: string[],
+    menuShow: boolean,
+    headerShow:boolean
 }
 export const useAppStore = defineStore({
     id: "app",
     state: (): AppStore => ({
         openKeys: [],
-        selectedKeys: ["home"]
+        selectedKeys: ["home"],
+        menuShow:true,
+        headerShow:true
     }),
     getters: {
         getOpenKeys(): string[] {
@@ -27,6 +31,12 @@ export const useAppStore = defineStore({
         getSelectedKeys(): string[] {
             return getSess("selectedKeys") || this.selectedKeys;
         },
+        getMenuShow():boolean{
+            return this.menuShow;
+        },
+        getHeaderShow():boolean{
+            return this.headerShow;
+        }
     },
     actions: {
         setOpenKeys(openKeys: string[]) {
@@ -36,7 +46,12 @@ export const useAppStore = defineStore({
         setSelectedKeys(selectedKeys: string[]) {
             this.selectedKeys = selectedKeys;
             setSess("selectedKeys", selectedKeys)
-
+        },
+        setMenuShow(menu:boolean){
+            this.menuShow = menu;
+        },
+        setHeaderShow(tab:boolean){
+            this.headerShow = tab
         },
     }
 })
