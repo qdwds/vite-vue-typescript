@@ -1,7 +1,7 @@
 /*
  * @Description: three
  * @Date: 2021-07-06 16:38:48
- * @LastEditTime: 2021-07-06 17:32:48
+ * @LastEditTime: 2021-07-06 22:07:30
  */
 
 import { AppRouteModule } from "@/router/types";
@@ -12,15 +12,15 @@ const three:AppRouteModule = {
     path:"/three",
     name:"Three",
     component:LAYOUT,
-    redirect:"/three/world",
+    redirect:"/three/word",
     meta:{
         title:"Three",
         orderNo:6000
     },
     children:[
         {
-            path:"world",
-            name:"World",
+            path:"word",
+            name:"Word",
             component:()=>import("@/views/demo/threejs/world/index.vue"),
             meta:{
                 title:"球的世界"
@@ -32,6 +32,14 @@ const three:AppRouteModule = {
             component:()=>import("@/views/demo/threejs/quadratic/index.vue"),
             meta:{
                 title:"二次元"
+            }
+        },
+        {
+            path:"vr",
+            name:"Vr",
+            component:()=>import("@/views/demo/threejs/vr/index.vue"),
+            meta:{
+                title:"VR"
             }
         }
     ]
