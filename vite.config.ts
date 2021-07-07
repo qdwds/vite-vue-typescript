@@ -1,7 +1,7 @@
 /*
  * @Description: viteconfig.ts
  * @Date: 2021-06-16 15:53:17
- * @LastEditTime: 2021-07-06 11:46:14
+ * @LastEditTime: 2021-07-07 15:22:41
  */
 import { ConfigEnv, defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue';
@@ -60,6 +60,15 @@ export default ({ mode }: ConfigEnv) => {
             "box-shadow-base": "0 2px 8px rgba(0, 0, 0, 0.15)" // 浮层阴影
           },
           javascriptEnabled: true,
+        },
+      },
+    },
+    server: {
+      proxy: {
+        '/api': {
+          target: "http://localhost:5000",
+          changeOrigin: true,
+          rewrite: (path) => path.replace(/^\/api/, '')
         },
       },
     }

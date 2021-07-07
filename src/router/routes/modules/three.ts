@@ -1,7 +1,7 @@
 /*
  * @Description: three
  * @Date: 2021-07-06 16:38:48
- * @LastEditTime: 2021-07-06 22:07:30
+ * @LastEditTime: 2021-07-07 10:22:29
  */
 
 import { AppRouteModule } from "@/router/types";
@@ -15,7 +15,7 @@ const three:AppRouteModule = {
     redirect:"/three/word",
     meta:{
         title:"Three",
-        orderNo:6000
+        orderNo:5000
     },
     children:[
         {

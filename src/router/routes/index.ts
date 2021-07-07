@@ -9,8 +9,7 @@
  * 2000     cytoscape    
  * 3000     Menu         
  * 4000     feat         
- * 5000     t            
- * 6000     three        
+ * 5000     three            
  */
 
 import { AppRouteRecordRaw } from "../types";
