@@ -1,10 +1,10 @@
 <!--
  * @Description: content
  * @Date: 2021-06-17 15:36:46
- * @LastEditTime: 2021-07-07 10:46:57
+ * @LastEditTime: 2021-07-08 16:42:26
 -->
 <template>
-    <LayoutContent class="bg-dark bg-white relative dark" id="context">
+    <LayoutContent class="relative dark bg-gray-200" id="context">
         <RouterTransition></RouterTransition>
     </LayoutContent>
 </template>

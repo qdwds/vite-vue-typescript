@@ -1,7 +1,7 @@
 <!--
  * @Description: 根据地址下载
  * @Date: 2021-07-07 11:23:20
- * @LastEditTime: 2021-07-08 14:19:30
+ * @LastEditTime: 2021-07-08 16:45:05
 -->
 
 <template>
@@ -24,7 +24,6 @@ export default defineComponent({
             // window.open("http://bpic.588ku.com/element_origin_min_pic/17/06/13/5c5a1442f0ec72e59829ee10d891f224.jpg%21r650")
             apiFilePath()
                 .then((res) => {
-                    console.log(res);
                     window.open(res, "_blank");
                 })
                 .catch((e) => console.log(e));

@@ -1,10 +1,10 @@
 <!--
  * @Description: 页面布局
  * @Date: 2021-06-16 17:36:34
- * @LastEditTime: 2021-07-06 16:26:34
+ * @LastEditTime: 2021-07-08 16:41:31
 -->
 <template>
-    <Layout class="w-full h-full">
+    <Layout class="w-full h-full ">
         <LayoutSider
             v-show="getMenuShowStore"
             :trigger="null"
@@ -13,7 +13,7 @@
         >
             <Menu></Menu>
         </LayoutSider>
-        <Layout>
+        <Layout  class="bg-gray-200">
             <Header
                 v-model:collapsed="collapsed"
                 v-show="getHeaderShowStore"
