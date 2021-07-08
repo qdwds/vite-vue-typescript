@@ -1,20 +1,20 @@
 <!--
  * @Description: 
  * @Date: 2021-06-16 17:41:07
- * @LastEditTime: 2021-07-05 11:57:21
+ * @LastEditTime: 2021-07-08 12:11:25
 -->
 
 <template>
-   <BannerVideo></BannerVideo>
+    <BannerVideo></BannerVideo>
     <div class="center w-full h-full bg-dark-500 relative">
         <div class="w-96 h-auto p-4 bg-white rounded relative animate-box">
             <div class="w-full text-center text-xl mb-4 animate-l20">
                 用户登陆
             </div>
-            <Form ref="formRef" :model="formState">
+            <Form ref="formRef" :model="loginForm">
                 <FormItem name="pass" class="w-full relative animate-l30">
                     <Input
-                        v-model:value="formState.username"
+                        v-model:value="loginForm.username"
                         type="text"
                         class="relative"
                         placeholder="账户名"
@@ -22,7 +22,7 @@
                 </FormItem>
                 <FormItem name="checkPass" class="w-full relative animate-l40">
                     <InputPassword
-                        v-model:value="formState.password"
+                        v-model:value="loginForm.password"
                         type="password"
                         placeholder="密码"
                         @keyup.enter.prevent="submitUserInfo"
@@ -41,21 +41,20 @@
             <Divider class="w-full relative animate-l60">
                 <span class="text-xs text-gray-400">其他登陆</span>
             </Divider>
-            <OtherLogin class=" relative animate-l70"></OtherLogin>
+            <OtherLogin class="relative animate-l70"></OtherLogin>
         </div>
     </div>
 </template>
 <script lang="ts">
-import { defineComponent, reactive, ref, UnwrapRef } from "vue";
-import { Form, Button, Input, Divider } from "ant-design-vue";
+import { defineComponent, reactive, ref, toRefs, UnwrapRef } from "vue";
+import { Form, Button, Input, Divider, message } from "ant-design-vue";
 
 import { useRouter } from "vue-router";
 import BannerVideo from "./components/BannerVideo.vue";
 import OtherLogin from "./otherLogin.vue";
-interface FormState {
-    username: string;
-    password: string;
-}
+import { ILoginState } from "./types";
+import { apiUserLogin } from "@/api/user";
+import { storage } from "@/utils/cache";
 export default defineComponent({
     components: {
         Form,
@@ -70,19 +69,28 @@ export default defineComponent({
     setup() {
         const router = useRouter();
         const formRef = ref();
-        const formState: UnwrapRef<FormState> = reactive({
-            username: "admin",
-            password: "admin",
+        const state: UnwrapRef<ILoginState> = reactive({
+            loginForm: {
+                username: "admin",
+                password: "admin",
+            },
         });
 
         const submitUserInfo = () => {
-            router.push({
-                name: "home",
-            });
+            apiUserLogin(state.loginForm)
+                .then((res) => {
+
+                    if(!res.status) return message.error(res.msg);
+                    
+                    storage.set("USER_AUTH",res.token);
+                    router.push({
+                        name: "home",
+                    })
+                })
+                .catch((e) => {});
         };
         return {
-            formState,
-            formRef,
+            ...toRefs(state),
             submitUserInfo,
         };
     },
