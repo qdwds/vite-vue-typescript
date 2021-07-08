@@ -1,19 +1,21 @@
 <!--
  * @Description: 
- * @Author: 前端伪大叔
- * @Date: 2021-06-09 15:50:04
- * @LastEditTime: 2021-07-02 11:56:31
- * @yuque: http://www.yuque.com/qdwds
+ * @Date: 2021-07-07 10:07:59
+ * @LastEditTime: 2021-07-08 15:45:25
 -->
 <template>
     <div>
         <Button type="primary">1111</Button>
         <a href="#">2344444444444444</a>
+        {{v}}
+        <input v-model="v"/>
+        <input v-model="v"/>
+        
     </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent ,ref} from 'vue'
 import {Button} from "ant-design-vue"
 export default defineComponent({
     components:{
@@ -21,8 +23,10 @@ export default defineComponent({
     },
     setup () {
         
-
-        return {}
+        const v = ref(0)
+        return {
+            v
+        }
     }
 })
 </script>

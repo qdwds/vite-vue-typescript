@@ -1,7 +1,7 @@
 /*
  * @Description: 功能
  * @Date: 2021-07-01 22:43:37
- * @LastEditTime: 2021-07-01 22:46:21
+ * @LastEditTime: 2021-07-08 14:38:37
  */
 
 import type { AppRouteRecordRaw } from "@/router/types";
@@ -25,6 +25,14 @@ const feat:AppRouteRecordRaw = {
                 title:"文件下载"
             }
         },
+        {
+            path:"copy",
+            name:"Copy",
+            component:()=>import("@/views/demo/feat/copy/index.vue"),
+            meta:{
+                title:"剪切板"
+            }
+        }
     ]
 }
 

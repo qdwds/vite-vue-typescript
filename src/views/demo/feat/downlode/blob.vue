@@ -1,12 +1,12 @@
 <!--
  * @Description: 
  * @Date: 2021-07-07 11:23:55
- * @LastEditTime: 2021-07-07 15:53:48
+ * @LastEditTime: 2021-07-08 14:19:20
 -->
 
 <template>
     <div>
-        <Button @click="fileDownload">文件地址下载</Button>
+        <Button @click="fileDownload">文件流下载</Button>
     </div>
 </template>
 
@@ -20,23 +20,22 @@ export default defineComponent({
     },
     setup() {
         const fileDownload = () => {
-            apiFileBlob()
-                .then((res)=>{
-                    const blob = new Blob([res],{
-                        type:"image/png"
-                    })
-                    const url = window.URL.createObjectURL(blob);
-                    console.log(url);
-                    
-            const a = document.createElement('a');
-            a.download = `1.png`;
-            a.href = url;
-            a.click()
-                })
+            apiFileBlob().then((res) => {
+                const blob = new Blob([res], {
+                    type: "image/png",
+                });
+                const url = window.URL.createObjectURL(blob);
+                console.log(url);
+
+                const a = document.createElement("a");
+                a.download = `1.png`;
+                a.href = url;
+                a.click();
+            });
         };
-        return{
-            fileDownload
-        }
+        return {
+            fileDownload,
+        };
     },
 });
 </script>
