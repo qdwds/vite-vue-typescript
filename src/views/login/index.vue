@@ -1,7 +1,7 @@
 <!--
  * @Description: 
  * @Date: 2021-06-16 17:41:07
- * @LastEditTime: 2021-07-08 12:11:25
+ * @LastEditTime: 2021-07-09 16:50:53
 -->
 
 <template>
@@ -78,14 +78,17 @@ export default defineComponent({
 
         const submitUserInfo = () => {
             apiUserLogin(state.loginForm)
-                .then((res) => {
+                .then((res: any) => {
+                    if (!res.status) return message.error(res.msg);
 
-                    if(!res.status) return message.error(res.msg);
+                    storage.set("USER_AUTH", res.token);
                     
-                    storage.set("USER_AUTH",res.token);
+                    //  menu导航~
+                    storage.set("openKeys", [""]);
+                    storage.set("selectedKeys", ["home"]);
                     router.push({
                         name: "home",
-                    })
+                    });
                 })
                 .catch((e) => {});
         };

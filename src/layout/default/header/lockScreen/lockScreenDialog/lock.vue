@@ -10,13 +10,13 @@
 
 <script lang="ts">
 import { defineComponent, onMounted, reactive, toRefs } from "vue";
-import { useAppStoreModule } from "@/hooks/web/useApp";
+// import { useAppStoreModule } from "@/hooks/web/useApp";
 export default defineComponent({
     props: {
         unlockingShow: Boolean,
     },
     setup() {
-        const { getUnlocking } = useAppStoreModule();
+        // const { getUnlocking } = useAppStoreModule();
         const state = reactive({
             time: "",
             date: "",
@@ -31,24 +31,24 @@ export default defineComponent({
             "星期六",
         ];
         const updateTime = () => {
-            if (!getUnlocking.value) {
-                clearInterval(timerID);
-            }
-            let cd = new Date();
-            state.time =
-                zeroPadding(cd.getHours(), 2) +
-                ":" +
-                zeroPadding(cd.getMinutes(), 2) +
-                ":" +
-                zeroPadding(cd.getSeconds(), 2);
-            state.date =
-                zeroPadding(cd.getFullYear(), 4) +
-                "-" +
-                zeroPadding(cd.getMonth() + 1, 2) +
-                "-" +
-                zeroPadding(cd.getDate(), 2) +
-                " " +
-                week[cd.getDay()];
+            // if (!getUnlocking.value) {
+            //     clearInterval(timerID);
+            // }
+            // let cd = new Date();
+            // state.time =
+            //     zeroPadding(cd.getHours(), 2) +
+            //     ":" +
+            //     zeroPadding(cd.getMinutes(), 2) +
+            //     ":" +
+            //     zeroPadding(cd.getSeconds(), 2);
+            // state.date =
+            //     zeroPadding(cd.getFullYear(), 4) +
+            //     "-" +
+            //     zeroPadding(cd.getMonth() + 1, 2) +
+            //     "-" +
+            //     zeroPadding(cd.getDate(), 2) +
+            //     " " +
+            //     week[cd.getDay()];
         };
         let timerID = setInterval(updateTime, 1000);
 

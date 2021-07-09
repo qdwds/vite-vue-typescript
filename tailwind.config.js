@@ -1,7 +1,7 @@
 /*
  * @Description: wailwid.css 配置项
  * @Date: 2021-07-03 10:56:36
- * @LastEditTime: 2021-07-05 12:12:29
+ * @LastEditTime: 2021-07-09 15:21:16
  */
 module.exports = {
   mode: 'jit',

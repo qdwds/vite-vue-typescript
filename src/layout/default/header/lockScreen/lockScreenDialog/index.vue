@@ -1,7 +1,13 @@
+<!--
+ * @Description: 
+ * @Date: 2021-07-07 10:07:58
+ * @LastEditTime: 2021-07-09 16:36:58
+-->
 <template>
+        :visible="getUnlocking"
+
     <a-drawer
         :closable="false"
-        :visible="getUnlocking"
         :bodyStyle="{
             padding: 0,
             margin: 0,
@@ -25,7 +31,7 @@
 import { defineComponent, reactive, toRefs } from "vue";
 import Lock from "./lock.vue";
 import Unlocking from "./unlocking.vue";
-import { useAppStoreModule } from "@/hooks/web/useApp";
+// import { useAppStoreModule } from "@/hooks/web/useApp";
 export default defineComponent({
     props: {
         locking: Boolean,
@@ -35,7 +41,7 @@ export default defineComponent({
         Unlocking,
     },
     setup() {
-        const { getUnlocking } = useAppStoreModule();
+        // const { getUnlocking } = useAppStoreModule();
         const state = reactive({
             unlockingShow: false,
         });
@@ -51,7 +57,7 @@ export default defineComponent({
         return {
             handleMouseClick,
             handleReturn,
-            getUnlocking,
+            // getUnlocking,
             ...toRefs(state),
         };
     },

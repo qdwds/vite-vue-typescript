@@ -1,7 +1,7 @@
 <!--
  * @Description: 
  * @Date: 2021-07-07 11:23:55
- * @LastEditTime: 2021-07-08 14:19:20
+ * @LastEditTime: 2021-07-09 16:29:09
 -->
 
 <template>
@@ -20,7 +20,7 @@ export default defineComponent({
     },
     setup() {
         const fileDownload = () => {
-            apiFileBlob().then((res) => {
+            apiFileBlob().then((res:any) => {
                 const blob = new Blob([res], {
                     type: "image/png",
                 });

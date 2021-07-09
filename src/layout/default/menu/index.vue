@@ -1,7 +1,7 @@
 <!--
  * @Description: menu   
  * @Date: 2021-06-17 15:36:22
- * @LastEditTime: 2021-07-06 17:10:21
+ * @LastEditTime: 2021-07-09 17:44:55
 -->
 <template>
     <div>
@@ -41,14 +41,14 @@ export default defineComponent({
         const getFilterRoutes = fileterRoutes(routes);
         const getMenuRoutes = menuRoutes(getFilterRoutes);
         const routesName = getAllMenuName(getFilterRoutes);
-            
+
         const state = reactive({
-            openKeys:storage.get("openKeys")|| [""], //  subMenu
+            openKeys: storage.get("openKeys") || [""], //  subMenu
             selectedKeys: storage.get("selectedKeys") || ["home"], // menuItem 默认选中
         });
 
         //  获取当前选中的submenu
-        const handleOpenSubMenu = (openKeys: string[]) => {
+        const handleOpenSubMenu = (openKeys: string[]): void => {
             const latestOpenKey = openKeys.find(
                 (key) => state.openKeys.indexOf(key) === -1
             );
@@ -57,15 +57,13 @@ export default defineComponent({
             } else {
                 state.openKeys = latestOpenKey ? [latestOpenKey] : [];
             }
-            storage.set("openKeys",state.openKeys)
+            storage.set("openKeys", state.openKeys);
         };
 
         //  获取当前选中的 menuItem
         const handleMenuSelect = ({ selectedKeys }: any) => {
-            storage.set("selectedKeys",state.selectedKeys);
+            storage.set("selectedKeys", state.selectedKeys);
         };
-
-        
 
         return {
             ...toRefs(state),

@@ -28,7 +28,7 @@
 <script lang="ts">
 import { defineComponent, ref } from "vue";
 import { UserOutlined } from "@ant-design/icons-vue";
-import { useAppStoreModule } from "@/hooks/web/useApp";
+// import { useAppStoreModule } from "@/hooks/web/useApp";
 import { useRouter } from "vue-router";
 export default defineComponent({
     components: {
@@ -37,17 +37,17 @@ export default defineComponent({
     emits: ["handleReturn"],
     setup(_, ctx) {
         const password = ref<string>("");
-        const { setUnlocking } = useAppStoreModule();
+        // const { setUnlocking } = useAppStoreModule();
         const router = useRouter();
         //  解锁
         const handleUnlocking = () => {
             if (password.value === "admin") {
-                setUnlocking(false);
+                // setUnlocking(false);
             }
         };
         //  返回重新登录
         const handleToLogin = () => {
-            setUnlocking(false);
+            // setUnlocking(false);
             router.push({
                 name: "Login",
             });
