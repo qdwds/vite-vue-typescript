@@ -1,7 +1,7 @@
 /*
  * @Description: 功能
  * @Date: 2021-07-01 22:43:37
- * @LastEditTime: 2021-07-08 16:28:07
+ * @LastEditTime: 2021-07-09 10:51:43
  */
 
 import type { AppRouteRecordRaw } from "@/router/types";
@@ -42,9 +42,9 @@ const feat: AppRouteRecordRaw = {
             },
             children: [
                 {
-                    path: "ws",
-                    name: "ws",
-                    component: () => import("@/views/demo/feat/webSocket/ws/index.vue"),
+                    path: "connect",
+                    name: "connect",
+                    component: () => import("@/views/demo/feat/webSocket/connect/index.vue"),
                     meta: {
                         title: "连接测试"
                     }

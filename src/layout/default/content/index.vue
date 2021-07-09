@@ -1,7 +1,7 @@
 <!--
  * @Description: content
  * @Date: 2021-06-17 15:36:46
- * @LastEditTime: 2021-07-08 16:42:26
+ * @LastEditTime: 2021-07-09 14:51:54
 -->
 <template>
     <LayoutContent class="relative dark bg-gray-200" id="context">
@@ -25,4 +25,8 @@ export default defineComponent({
 </script>
 
 <style lang="less" scoped>
+#context {
+    height: calc(100vh - 4.5rem);
+    overflow-y: auto;
+}
 </style>
