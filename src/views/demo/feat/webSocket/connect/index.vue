@@ -1,7 +1,7 @@
 <!--
  * @Description: ws 连接测试
  * @Date: 2021-07-08 16:14:29
- * @LastEditTime: 2021-07-09 15:14:59
+ * @LastEditTime: 2021-07-11 14:17:51
 -->
 
 <template>
@@ -86,8 +86,6 @@ export default defineComponent({
 
         let ws: WebSocket;
         const handleWsConnect = () => {
-            console.log("event");
-
             ws = new WebSocket(state.host);
 
             ws.onopen = (event) => {
